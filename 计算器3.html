@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <span>请输入</span>
+            <span>
+                <input type="text" v-model='a' placeholder="0">
+            </span>
+        </div>
+        <div>
+            <span>请输入</span>
+            <span>
+                <input type="text" v-model='b' placeholder="0">
+            </span>
+        </div>
+     
+        <button v-on:click='handle'>计算</button>
+        <div>
+            <span>结果</span>
+            <span v-text='age'></span> 
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            a: '',
+            b: '',
+            age: ''
+        },
+        methods: {
+            handle: function() {
+              this.age = parseInt(this.a) + parseInt(this.b);
+                // if(this.a==''&&this.b==''){
+                //     this.age=0;
+                // }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
